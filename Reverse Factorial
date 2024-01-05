@@ -1,0 +1,14 @@
+import math
+
+fact = [1] * 1000001
+
+def inverseFactorial(n):
+    if n <= 1:
+        return 1
+    return fact[n] * inverseFactorial(n - 1)
+
+for i in range(1, 1000001):
+    fact[i] = fact[i - 1] * i
+
+n = int(input())
+print(inverseFactorial(n))
